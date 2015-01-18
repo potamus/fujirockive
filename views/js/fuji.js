@@ -1,3 +1,4 @@
+//test
 var playertype = "all";
 var listurl ="";
 var req;
