@@ -434,7 +434,7 @@ function play() {
     }
     player.loadVideoById(video_list[index][1]);
     playinghtml = '<div class="col-md-12 col-sm-12"><strong>Now Playing : </strong>' + video_list[index][2] + '</div>';
-    playinghtml += '<div class="col-md-12 col-sm-12"><strong>Artist : </strong><a href="" class="artist"';
+    playinghtml += '<div class="col-md-12 col-sm-12"><strong>Artist : </strong><a href="#" class="artist"';
     playinghtml += 'id="' + video_list[index][3] + '">'+ video_list[index][0]; + '</a></div><hr>';
 
     $("div#playinginfo div.row").fadeOut(300,function(){
