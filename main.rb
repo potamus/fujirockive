@@ -8,13 +8,12 @@ require 'json'
 require 'rexml/document'
 require 'cgi'
 require 'kconv'
-require 'yaml'
 
 enable :cross_origin
 set :bind, '0.0.0.0'
 
 # DB設定の読み込み
-conf = YAML.load_file(File.join(__dir__, 'database.yml'))
+#conf = YAML.load_file(File.join(__dir__, 'database.yml'))
 #ActiveRecord::Base.establish_connection(conf['development'])
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
