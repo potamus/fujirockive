@@ -14,27 +14,27 @@ jQuery(function($) {
     });
 
     $("ul.year li a").click(function(){
-        var url = "http://192.168.33.10:4567/year/" + this.id;
+        var url = "http://fujirockive.herokuapp.com/year/" + this.id;
         describe(url,1);
     });
 
     $("ul.stage li a").click(function(){
-        var url = "http://192.168.33.10:4567/stage/"+ $(this).parent().parent().attr('id') + "/" + this.id;
+        var url = "http://fujirockive.herokuapp.com/stage/"+ $(this).parent().parent().attr('id') + "/" + this.id;
         describe(url,2);
     });
 
     $("#timetable").on('click','a.artist',function(){
-        var url = "http://192.168.33.10:4567/artist/" + this.id;
+        var url = "http://fujirockive.herokuapp.com/artist/" + this.id;
         describeArtist(url);
     });
 
     $("#timetable").on('click','a.year',function(){
-        var url = "http://192.168.33.10:4567/year/" + this.id;
+        var url = "http://fujirockive.herokuapp.com/year/" + this.id;
         describe(url,1);
     });
 
     $("#playinginfo").on('click','a.artist',function(){
-        var url = "http://192.168.33.10:4567/artist/" + this.id;
+        var url = "http://fujirockive.herokuapp.com/artist/" + this.id;
         describeArtist(url);
     });
 
@@ -362,13 +362,13 @@ function getStagename(stage_id){
 function changeListurl(type,year,day,stage,aid) {
     switch (type){
       case "year":
-        listurl = "http://192.168.33.10:4567/yearsong/" + year + "/" + day + "/";
+        listurl = "http://fujirockive.herokuapp.com/yearsong/" + year + "/" + day + "/";
         break;
       case "stage":
-        listurl = "http://192.168.33.10:4567/stagesong/" + stage + "/" + year + "/" + day + "/";
+        listurl = "http://fujirockive.herokuapp.com/stagesong/" + stage + "/" + year + "/" + day + "/";
         break;
       case "artist":
-        listurl = "http://192.168.33.10:4567/artistsong/" + aid + "/";
+        listurl = "http://fujirockive.herokuapp.com/artistsong/" + aid + "/";
         break;
     }
 }
