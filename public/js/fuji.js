@@ -389,6 +389,7 @@ function get_list(url,list,func) {
 }
 
 function onPlayerReady() {
+  var agent = navigator.userAgent;
   changeListurl("year","all","all","","");
   get_list(listurl,2,function(){
     $("#player").fadeIn();
