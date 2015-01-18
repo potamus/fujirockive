@@ -7,7 +7,7 @@ jQuery(function($) {
       $("#player").prependTo("footer");
     });
 
-    $("#player").hide();
+//    $("#player").hide();
 
     $("#next").click(function(){
         changePlaylist();
