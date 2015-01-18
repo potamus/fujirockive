@@ -6,21 +6,17 @@ require 'mysql2'
 require 'youtube_search'
 require 'json'
 require 'rexml/document'
-require "cgi"
+require 'cgi'
 require 'kconv'
+require 'yaml'
 
 enable :cross_origin
 set :bind, '0.0.0.0'
 
 # DB設定の読み込み
-ActiveRecord::Base.establish_connection(
-  "adapter" => "mysql2",
-  "database" => "fujirock",
-  "host" => "localhost",
-  "username" => "root",
-  "password" => "ab1054",
-  "encoding" => "utf8",
-)
+conf = YAML.load_file(File.join(__dir__, 'database.yml'))
+#ActiveRecord::Base.establish_connection(conf['development'])
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 get '/' do
     erb :index
@@ -336,7 +332,7 @@ get '/artist/:aid' do |aid|
 
       #setlistfmから最新セットリストを取得
       setlists = []
-      if data.mbid != "" then
+      if data.mbid != "" and data.mbid != nil then
 
         mbid = data.mbid
         begin
