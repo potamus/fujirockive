@@ -393,9 +393,12 @@ function onPlayerReady() {
   get_list(listurl,2,function(){
     $("#player").fadeIn();
     $("#loading").hide();
-    play();
-    changeListurl("year","all","all","","");
-    get_list(listurl,3);            
+    if (navigator.userAgent.toLowerCase().indexOf('iphone') !== -1
+    && navigator.userAgent.toLowerCase().indexOf('iphone') !== -1) {
+      play();
+      changeListurl("year","all","all","","");
+      get_list(listurl,3);            
+    }
   });
 }
 
