@@ -394,8 +394,8 @@ function onPlayerReady() {
   get_list(listurl,2,function(){
     $("#player").fadeIn();
     $("#loading").hide();
-    if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1
-     || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1){
+    if(agent.search(/iPhone/) == -1 && agent.search(/iPad/) == -1
+     && agent.search(/iPod/) == -1 && agent.search(/Android/) == -1){
         play();
         changeListurl("year","all","all","","");
         get_list(listurl,3);            
