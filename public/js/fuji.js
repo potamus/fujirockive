@@ -51,7 +51,7 @@ jQuery(function($) {
       html = "";
       changeListurl("year",this.id,"all","all","");
       get_list(listurl,2,function(){
-        $("#player").fadeIn();
+        $("#player").show();
         $("#loading").hide();
         play();
         get_list(listurl,3);
