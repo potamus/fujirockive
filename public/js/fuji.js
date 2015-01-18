@@ -41,7 +41,7 @@ jQuery(function($) {
     //----年ごと再生イベント----------------------------------
     //年指定
     $('#timetable').on('click','h1.year a',function(){
-//      $("#player").fadeOut();            
+      $("#player").fadeOut();            
       $("#loading").fadeIn();
        $("div#playinginfo div.row").fadeOut();
      stopVideo();
